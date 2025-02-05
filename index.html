@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="./src/output.css">
 </head>
-<body class="bg-amber-700">
-    <h1 class="text-red-600">hy</h1>
+
+<body>
+
+    <nav class="bg-blue-600 p-4">
+        <div class="flex items-center justify-between">
+
+            <div class="text-white text-3xl font-bold ">Nav</div>
+
+            <button id="menu-toogle" class="lg:hidden text-white text-3xl">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+
+            <div id="menu" class="fixed top-0 right-0 h-full w-64 bg-blue-400 p-6 transform translate-x-full transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 lg:flex lg:w-auto lg:bg-transparent lg:p-0">
+
+                <button id="close-menu" class="lg:hidden text-white text-3xl absolute top-4 right-4">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+
+                <a href="#" class="block text-white py-2 hover:bg-blue-700 lg:hover:bg-transparent">Home</a>
+                <a href="#" class="block text-white py-2 hover:bg-blue-700 lg:hover:bg-transparent">About</a>
+                <a href="#" class="block text-white py-2 hover:bg-blue-700 lg:hover:bg-transparent">Services</a>
+                <a href="#" class="block text-white py-2 hover:bg-blue-700 lg:hover:bg-transparent">Contact</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <script>
+        const menuToogle = document.getElementById("menu-toogle")
+        const closeMenu = document.getElementById("close-menu")
+        const menu = document.getElementById("menu")
+
+        menuToogle.addEventListener('click', () =>{
+            menu.classList.remove('translate-x-full')
+        })
+
+        closeMenu.addEventListener('click', () =>{
+            menu.classList.add('translate-x-full')
+        })
+    </script>
 </body>
+
 </html>
